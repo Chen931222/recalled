@@ -1,6 +1,6 @@
 # PR to cognizant-ai-labs/agentic-web: add Recalled? to docs/agentic_websites.md
 
-Not sent. Opens a public pull request from the GitHub account Chen931222; needs the owner's OK.
+Sent 2026-11-23 with the owner's OK: https://github.com/cognizant-ai-labs/agentic-web/pull/73
 
 Row to append to the table:
 
