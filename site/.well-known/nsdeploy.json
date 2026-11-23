@@ -1,0 +1,19 @@
+{
+  "protocol": "nsdeploy-link/v1",
+  "exports": [
+    {
+      "network": "recall_check",
+      "front_man": "recall_checker",
+      "aliases": [
+        "recall_check",
+        "recall_checker",
+        "recalled"
+      ],
+      "url": "recall_check"
+    }
+  ],
+  "imports": [],
+  "link_updates": {
+    "mode": "browser-local"
+  }
+}

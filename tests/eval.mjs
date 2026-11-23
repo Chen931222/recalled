@@ -4,7 +4,7 @@
 // Negatives: same brand + product but a model the notice does not list (must not be "likely" for that notice);
 //            brands that are not in the index at all (must be "none").
 import { readFileSync, writeFileSync } from 'node:fs';
-import { prepare, check, normBrand } from '../site/match.js';
+import { prepare, check, normBrand } from '../site/js/match.js';
 
 const recs = JSON.parse(readFileSync(new URL('../site/data/recalls.json', import.meta.url), 'utf8'));
 const P = prepare(recs);

@@ -1,0 +1,82 @@
+{
+  "brand": "Recalled? Assistant",
+  "networks": [
+    {
+      "name": "recall_check",
+      "front_man": "recall_checker",
+      "hocon": "./recall_check.network.json",
+      "description": "Ask whether a stroller, crib, car seat or other baby gear was recalled in the U.S. or Canada. I answer only from the official notices.",
+      "tags": [
+        "agentified-website",
+        "product-safety",
+        "recalls"
+      ],
+      "sample_queries": [
+        "Was the Graco Quattro Tour stroller recalled?",
+        "I am selling a Pearhead learning set, model 87150. Is it recalled?",
+        "Check UPC 698904871507",
+        "Is this crib safe to buy?",
+        "Which countries does this check cover, and how fresh is it?"
+      ]
+    }
+  ],
+  "llm_router": {
+    "base_url": "https://api.otari.ai/api/v1",
+    "mock": false,
+    "byok_router": "https://api.otari.ai/api/v1"
+  },
+  "allowed_peers": [],
+  "peer_policy": {
+    "mode": "closed",
+    "deny_origins": [],
+    "note": "Calls no partner sites. Shares its three public reads (check_recall, get_recall_notice, get_about) with every site through its bridge."
+  },
+  "agent_mcp": {
+    "protocol": "nsdeploy-agent-mcp/v1",
+    "network": "recall_check",
+    "front_man": "recall_checker",
+    "available": false,
+    "reason": "This is a static bundle; a public MCP facade requires an application host."
+  },
+  "theme": {
+    "primary": "#9e1b14"
+  },
+  "linking": {
+    "protocol": "nsdeploy-link/v1",
+    "exports": [
+      {
+        "network": "recall_check",
+        "front_man": "recall_checker",
+        "aliases": [
+          "recall_check",
+          "recall_checker",
+          "recalled"
+        ],
+        "url": "recall_check"
+      }
+    ],
+    "imports": [],
+    "link_updates": {
+      "mode": "browser-local"
+    }
+  },
+  "deployment": {
+    "mode": "static",
+    "self_contained_runtime": true,
+    "browser_mock": false,
+    "direct_byok": true,
+    "direct_mcp_requires_cors": true,
+    "public_mcp_facade": false
+  },
+  "actions": {
+    "version": 1,
+    "module": "./site-actions.js",
+    "bridge": "./bridge/action-bridge.html",
+    "agentTools": [
+      "check_recall",
+      "get_recall_notice",
+      "get_about",
+      "get_page_result"
+    ]
+  }
+}

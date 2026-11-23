@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recalled? Check second-hand baby gear against official recall notices</title>
+  <meta name="description" content="Before you buy or list a used stroller, crib, car seat or high chair, check it against U.S. CPSC and Health Canada recall notices. Free, no account, and any marketplace's assistant can ask it too.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assistant.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="site.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <h1>Recalled?</h1>
+    <p class="lede">Before you buy or list second-hand baby gear, check whether it was recalled.</p>
+    <p class="dataline">
+      <span id="data-count">1,138</span> notices from the U.S. CPSC and Health Canada.
+      Newest notice <span id="data-newest">19 Nov 2026</span>. Index built <span id="data-built">23 Nov 2026</span>.
+    </p>
+  </header>
+
+  <main>
+    <section class="check" aria-labelledby="check-heading">
+      <h2 id="check-heading">Check an item</h2>
+      <p class="hint">The model number and UPC are on a label under the seat, on the frame or on the box. They decide most answers.</p>
+      <form id="check-form" novalidate>
+        <div class="row">
+          <label for="q-brand">Brand</label>
+          <input id="q-brand" name="brand" type="text" maxlength="80" autocomplete="off" placeholder="Graco">
+        </div>
+        <div class="row">
+          <label for="q-product">Product</label>
+          <input id="q-product" name="product" type="text" maxlength="120" autocomplete="off" placeholder="Quattro Tour stroller">
+        </div>
+        <div class="row">
+          <label for="q-model">Model number <span class="opt">if you have it</span></label>
+          <input id="q-model" name="model" type="text" maxlength="40" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="row">
+          <label for="q-upc">UPC <span class="opt">digits under the bar code</span></label>
+          <input id="q-upc" name="upc" type="text" maxlength="20" inputmode="numeric" autocomplete="off">
+        </div>
+        <p id="check-error" class="error" role="alert" hidden></p>
+        <button type="submit">Check</button>
+      </form>
+    </section>
+
+    <section id="result" class="result" aria-labelledby="result-level" hidden>
+      <h2 id="result-level" tabindex="-1">No match found</h2>
+      <p id="result-meaning" class="meaning"></p>
+      <ol id="result-list" class="matches"></ol>
+      <p id="result-searched" class="searched"></p>
+    </section>
+
+    <section class="levels" aria-labelledby="levels-heading">
+      <h2 id="levels-heading">What the answers mean</h2>
+      <dl>
+        <dt>Likely recalled</dt>
+        <dd>A model number or UPC you gave is listed in a recall notice. Stop using it and follow the notice.</dd>
+        <dt>Possible match</dt>
+        <dd>Same brand and kind of product, but nothing you gave pins it to the recalled units. Compare the models, date codes or description in the notice.</dd>
+        <dt>No match found</dt>
+        <dd>None of the notices searched list it. That is not the same as safe: this covers only U.S. and Canadian notices for baby and kids gear.</dd>
+      </dl>
+    </section>
+
+    <section id="assistant" class="assistant" aria-labelledby="assistant-heading">
+      <h2 id="assistant-heading">Ask Recalled?</h2>
+      <p>Describe the item in your own words, or paste a listing, and the assistant checks each product and explains the notice. It answers only from the notices.</p>
+      <p class="assistant-note">Your messages and this page's data go to the LLM provider you choose in the settings below. Nothing here can be bought, sold or changed, so nothing needs confirming.</p>
+      <p id="assistant-status" role="status">Connecting the assistant… If this message stays, the assistant could not load. You can still use the check above.</p>
+      <div id="agent-app">
+        <div data-ns-slot="header"></div>
+        <div class="assistant-panels">
+          <div data-ns-slot="chat"></div>
+          <div data-ns-slot="agents"></div>
+        </div>
+        <div data-ns-slot="settings"></div>
+      </div>
+    </section>
+
+    <section class="for-sites" aria-labelledby="sites-heading">
+      <h2 id="sites-heading">For other sites</h2>
+      <p>Recalled? publishes an <a href="https://github.com/cognizant-ai-labs/agentic-web">Open Agentic Web</a> network. A marketplace, a parenting forum or a resale shop can add it to its own assistant, so a seller hears about a recall before the listing goes up. Its three reads (check an item, read a notice, read what is covered) are shared with every site. Each call runs in the visitor's browser, on their key, after they agree on a card.</p>
+      <p class="netline">Network URL <code id="network-url">recall_check</code></p>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <h2>Sources</h2>
+    <ul>
+      <li>U.S. Consumer Product Safety Commission, <a href="https://www.saferproducts.gov/RestWebServices/">Recalls API</a>. U.S. government work.</li>
+      <li>Health Canada, <a href="https://open.canada.ca/data/en/dataset/d38de914-c94c-429b-8ab1-8776c31643e3">Recalls and Safety Alerts</a>. Open Government Licence – Canada.</li>
+    </ul>
+    <p>Not affiliated with either agency. Notices are summarised and linked, not copied; always read the official notice. There is no account and no server: the check runs in your browser.</p>
+  </footer>
+</body>
+</html>

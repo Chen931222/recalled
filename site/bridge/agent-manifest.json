@@ -1,0 +1,11 @@
+{
+  "networks": [
+    {
+      "name": "recall_check"
+    }
+  ],
+  "actions": {
+    "version": 1,
+    "module": "./bridge-actions.js"
+  }
+}

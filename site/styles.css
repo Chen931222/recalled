@@ -1,0 +1,134 @@
+/* Recalled? — set like a printed safety notice: one column, ruled sections, black ink and
+   one red for the verdict. System fonts only, so nothing is fetched from a font host. */
+:root {
+  --paper: #f6f4ef;
+  --sheet: #fbfaf7;
+  --ink: #1b1a17;
+  --ink-2: #4a463f;
+  --rule: #c9c3b6;
+  --red: #9e1b14;
+  --amber: #7a4a00;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans: -apple-system, "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace;
+  --measure: 44rem;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--paper); color: var(--ink); }
+
+body {
+  margin: 0;
+  font: 400 1.0625rem/1.55 var(--sans);
+  background: var(--paper);
+}
+
+a { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--red); }
+
+h1, h2, h3 { font-family: var(--serif); font-weight: 700; margin: 0; }
+
+.masthead, main, .colophon {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+
+/* Masthead: the notice heading. */
+.masthead { padding-top: 56px; padding-bottom: 28px; border-bottom: 3px double var(--ink); }
+.kicker {
+  margin: 0 0 6px;
+  font: 600 0.78rem/1.2 var(--sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.masthead h1 { font-size: clamp(3.4rem, 13vw, 6.5rem); line-height: 0.92; letter-spacing: -0.02em; }
+.lede { margin: 18px 0 10px; font: 400 1.35rem/1.35 var(--serif); max-width: 32rem; }
+.dataline { margin: 0; font-size: 0.9rem; color: var(--ink-2); }
+
+main > section { padding: 36px 0; border-bottom: 1px solid var(--rule); }
+main h2 { font-size: 1.6rem; line-height: 1.2; margin-bottom: 10px; }
+.hint { margin: 0 0 20px; color: var(--ink-2); max-width: 34rem; }
+
+/* Form: ruled fields, like a form you fill in by hand. */
+#check-form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 24px; }
+.row { display: flex; flex-direction: column; gap: 4px; }
+.row label { font-weight: 600; font-size: 0.95rem; }
+.opt { font-weight: 400; color: var(--ink-2); }
+.row input {
+  font: 400 1.05rem/1.4 var(--sans);
+  color: var(--ink);
+  background: var(--sheet);
+  border: 0;
+  border-bottom: 2px solid var(--ink);
+  border-radius: 0;
+  padding: 10px 8px;
+  min-height: 44px;
+}
+.row input::placeholder { color: #6b665c; }
+.row input:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+#q-model, #q-upc { font-family: var(--mono); letter-spacing: 0.02em; }
+.error { grid-column: 1 / -1; margin: 0; color: var(--red); font-weight: 600; }
+#check-form button {
+  grid-column: 1 / -1;
+  justify-self: start;
+  font: 700 1.05rem/1 var(--sans);
+  color: #fff;
+  background: var(--ink);
+  border: 0;
+  border-radius: 2px;
+  padding: 14px 34px;
+  min-height: 48px;
+  cursor: pointer;
+}
+#check-form button:hover { background: var(--red); }
+#check-form button:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+
+/* Result: the verdict is the largest thing on the page once it exists. */
+.result h2 {
+  font-size: clamp(2.2rem, 8vw, 3.4rem);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+.result h2:focus { outline: none; }
+.result[data-level="likely"] h2 { color: var(--red); }
+.result[data-level="possible"] h2 { color: var(--amber); }
+.result[data-level="none"] h2 { color: var(--ink); }
+.meaning { font: 400 1.15rem/1.45 var(--serif); margin: 12px 0 8px; max-width: 36rem; }
+.searched { font-size: 0.88rem; color: var(--ink-2); margin: 16px 0 0; }
+
+.matches { list-style: none; margin: 18px 0 0; padding: 0; }
+.match { background: var(--sheet); border: 1px solid var(--rule); border-left: 6px solid var(--rule); padding: 18px 20px; margin-bottom: 14px; }
+.match-likely { border-left-color: var(--red); }
+.match-possible { border-left-color: var(--amber); }
+.match-meta { margin: 0 0 6px; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); font-weight: 600; }
+.match h3 { font-size: 1.2rem; line-height: 1.3; }
+.match-why { margin: 6px 0 12px; font-style: italic; font-family: var(--serif); }
+.match dl { display: grid; grid-template-columns: 8.5rem 1fr; gap: 6px 14px; margin: 0 0 12px; font-size: 0.95rem; }
+.match dt { font-weight: 600; }
+.match dd { margin: 0; overflow-wrap: anywhere; }
+.match a { font-weight: 600; }
+
+/* What the answers mean. */
+.levels dl { margin: 0; display: grid; grid-template-columns: 11rem 1fr; gap: 12px 20px; }
+.levels dt { font-family: var(--serif); font-weight: 700; font-size: 1.1rem; }
+.levels dd { margin: 0; }
+
+.for-sites p { max-width: 38rem; }
+.netline { font-size: 0.92rem; }
+.netline code { font-family: var(--mono); background: var(--sheet); border: 1px solid var(--rule); padding: 2px 6px; overflow-wrap: anywhere; }
+
+.colophon { padding-top: 28px; padding-bottom: 64px; font-size: 0.9rem; color: var(--ink-2); }
+.colophon h2 { font-size: 1.1rem; color: var(--ink); margin-bottom: 6px; }
+.colophon ul { padding-left: 1.1rem; margin: 0 0 12px; }
+
+@media (max-width: 640px) {
+  .masthead { padding-top: 36px; }
+  #check-form { grid-template-columns: 1fr; }
+  .match dl, .levels dl { grid-template-columns: 1fr; gap: 2px; }
+  .match dd, .levels dd { margin-bottom: 8px; }
+  .assistant-panels { grid-template-columns: 1fr; }
+}
