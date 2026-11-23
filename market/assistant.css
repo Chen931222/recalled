@@ -27,7 +27,7 @@
 
 /* Set the height once the runtime has mounted the chat, so a failed load leaves no
    empty box. */
-#agent-app.ns-composed-app [data-ns-slot="chat"] { height: 720px; }
+#agent-app.ns-composed-app [data-ns-slot="chat"] { height: 540px; }
 /* The runtime gives the chat no background of its own. Keep --ns-msgbg different from
    --ns-bg, or bot replies lose their bubble. */
 #agent-app .ns-chat { background: var(--ns-bg); }
@@ -93,3 +93,9 @@ body > dialog button { margin-right: 8px; }
   .assistant-review dl { grid-template-columns: 1fr; gap: 0; }
   .assistant-review dd { margin-bottom: 8px; }
 }
+
+/* The runtime sets some labels at 10-11px. Lift them to a readable floor. */
+#agent-app .ns-arole, #agent-app .ns-pill, #agent-app .ns-hint, #agent-app button { font-size: 12px; }
+#agent-app small { font-size: 12px; }
+#agent-app [data-ns-slot="settings"] p { max-width: 40rem; }
+#agent-app .ns-hint { max-width: 30rem; }
