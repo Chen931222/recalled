@@ -2,6 +2,8 @@
 
 Before you buy or list second-hand baby gear, check whether it was recalled. Any marketplace's assistant can ask it too.
 
+**Live:** https://chen931222.github.io/recalled/ · network URL `https://chen931222.github.io/recalled/recall_check` · demo partner site https://hand-me-down-market-demo.vercel.app/
+
 A static website plus an [Open Agentic Web](https://github.com/cognizant-ai-labs/agentic-web) agent network. The check itself needs no AI and no key. The assistant runs in the visitor's browser on their own LLM key.
 
 ## What it searches

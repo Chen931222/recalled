@@ -6,12 +6,12 @@ Nothing to install, no key, no account. The call runs in your visitor's browser,
 
 ## Three edits
 
-`<recalled>` below is the folder Recalled? is served from, for example `https://example.org/recalled`.
+`<recalled>` below is the folder Recalled? is served from: `https://chen931222.github.io/recalled`, so the network URL is `https://chen931222.github.io/recalled/recall_check` and the origin for `allowed_peers` is `https://chen931222.github.io`.
 
 1. **Manifest** (`agent-manifest.json`): add Recalled?'s origin to `allowed_peers` and keep `peer_policy.mode` `"closed"`.
 
    ```json
-   "allowed_peers": ["https://example.org"]
+   "allowed_peers": ["https://chen931222.github.io"]
    ```
 
 2. **Network** (`<your network>.hocon`): put the network URL in the calling agent's `tools`, and give the consent card a label.
@@ -27,10 +27,10 @@ Nothing to install, no key, no account. The call runs in your visitor's browser,
 3. **Instructions**: one "How to work" line, and the standard `{partner_rules}` from the skill's `templates/network.hocon`.
 
    ```text
-   - For a recall check, ask recall_check in one short line with the brand, the product and the model number or UPC if known, such as "Recall check: Pearhead Infant Learning Toy Set, model 87150". If it says likely recalled, do not publish the listing. Never call an item safe.
+   - For a recall check, ask recalled_recall_check in one short line with the brand, the product and the model number or UPC if known, such as "Recall check: Pearhead Infant Learning Toy Set, model 87150". If it says likely recalled, do not publish the listing. Never call an item safe.
    ```
 
-   The tool name comes from the URL's path: `https://example.org/recalled/recall_check` becomes `recalled_recall_check`. The build prints it.
+   The tool name comes from the URL's path: `https://chen931222.github.io/recalled/recall_check` becomes `recalled_recall_check`. The build prints it.
 
 Then rebuild and check the call from your origin:
 

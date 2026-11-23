@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "site/index.html"
+        ],
+        "createdAt": "2026-11-23T12:53:42.770Z",
+        "reason": "AI decision 2026-11-23: page is set as a printed recall notice; paper tone documented in site/styles.css"
+      }
+    ]
+  }
+}

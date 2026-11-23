@@ -1,6 +1,6 @@
 # Devpost text draft — Recalled?
 
-Fill-ins marked ⟨…⟩ wait on deployment. Numbers verified 2026-11-23 from the repository; re-run `node tests/eval.mjs` before submitting.
+Deployed 2026-11-23. Numbers verified 2026-11-23 from the repository; re-run `node tests/eval.mjs` before submitting.
 
 ## Tagline
 
@@ -12,7 +12,7 @@ Recalls take new strollers, cribs and sleepers off store shelves. Used ones keep
 
 ## What it does
 
-- **A check page that needs no AI.** Type a brand, a product, and the model number or UPC if you have it. Recalled? searches ⟨3,339⟩ baby and kids gear notices from the U.S. Consumer Product Safety Commission and Health Canada and answers **Likely recalled**, **Possible match** or **No match found**, with the hazard, what to do and a link to each official notice. It never says "safe".
+- **A check page that needs no AI.** Type a brand, a product, and the model number or UPC if you have it. Recalled? searches 3,339 baby and kids gear notices from the U.S. Consumer Product Safety Commission and Health Canada and answers **Likely recalled**, **Possible match** or **No match found**, with the hazard, what to do and a link to each official notice. It never says "safe".
 - **An assistant** (an Open Agentic Web network, one agent, four read-only tools) that explains the notices in plain words and answers only from tool results.
 - **A partner for other sites.** Its action bridge shares three reads with every site. The repository includes a second site on another origin, Hand-Me-Down Market, whose assistant asks Recalled? after a consent card before it publishes a listing.
 - **A guide and a dataset for the community.** `docs/ADD-TO-YOUR-SITE.md` adds Recalled? to any agentic site in three edits; the merged index is rebuilt daily by a GitHub Action that only commits when the evaluation and all tests pass.
@@ -64,7 +64,7 @@ JavaScript, Python, Open Agentic Web runtime and agentify-website skill, CPSC Re
 
 ## Links
 
-- Site: ⟨url⟩
-- Demo partner site: ⟨url⟩
-- Network URL: ⟨url⟩/recall_check
-- Code: ⟨repo⟩
+- Site: https://chen931222.github.io/recalled/
+- Demo partner site: https://hand-me-down-market-demo.vercel.app/
+- Network URL: https://chen931222.github.io/recalled/recall_check
+- Code: https://github.com/Chen931222/recalled
