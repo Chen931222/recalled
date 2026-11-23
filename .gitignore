@@ -1,0 +1,5 @@
+vendor/
+data/raw/
+__pycache__/
+test_out.txt
+.env*

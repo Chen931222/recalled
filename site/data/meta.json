@@ -1,0 +1,22 @@
+{
+ "built": "2026-11-23T11:29:33+00:00",
+ "counts": {
+  "CPSC": 854,
+  "Health Canada": 284
+ },
+ "with_model_numbers": 295,
+ "with_upcs": 15,
+ "newest": "2026-11-19",
+ "sources": [
+  {
+   "name": "U.S. Consumer Product Safety Commission, Recalls API",
+   "url": "https://www.saferproducts.gov/RestWebServices/",
+   "license": "U.S. government work (public domain)"
+  },
+  {
+   "name": "Health Canada, Recalls and Safety Alerts",
+   "url": "https://open.canada.ca/data/en/dataset/d38de914-c94c-429b-8ab1-8776c31643e3",
+   "license": "Open Government Licence - Canada"
+  }
+ ]
+}

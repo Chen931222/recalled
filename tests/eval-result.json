@@ -1,0 +1,947 @@
+{
+ "by": {
+  "pos-model": [
+   50,
+   50
+  ],
+  "pos-nomodel": [
+   25,
+   25
+  ],
+  "neg-model": [
+   25,
+   25
+  ],
+  "neg-brand": [
+   25,
+   25
+  ]
+ },
+ "rows": [
+  {
+   "kind": "pos-model",
+   "id": "cpsc-03009",
+   "q": "bikepro Baby Walker 392STP",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-03009"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-13106",
+   "q": "bexco dba Million Dollar Baby Dressers M4732",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-13106"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-23272",
+   "q": "tomy Boon Flair & Flair Elite highchairs b751",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-23272"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-22215",
+   "q": "monahan d UPPAbaby All-Terrain RIDGE Jogging Strollers 1401RDGUS",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-22215"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-17104",
+   "q": "kids ii Oball Rattles 81031",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-17104"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-26688",
+   "q": "taleco gear G Taleco Gear Baby Jumpers, Baby Swings and 2-in-1 Baby Jumper & Swings jumper-01",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-26688"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-26332",
+   "q": "dongguanshi aokaolan Goregent Infant Walkers GEBA030AGXP",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-26332"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-24217",
+   "q": "lfn Mill Valley Jr. six-drawer youth dressers C2192YN04",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-24217"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-25033",
+   "q": "baofali trading Baofali 4-in-1 Microfiber Crib Safety Bumpers jj25b-a3",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-25033"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-24707",
+   "q": "unclewu life Infant Bath Seats YD108",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-24707"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-24325",
+   "q": "shenzhen two Papablic Archie Infant Swings PAPABLIC61A",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-24325"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-26290",
+   "q": "hebei beihong High Chairs TBHC6900",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-26290"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-07300",
+   "q": "nettocollection Moderne and \"Loft\" Cribs nc-137",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-07300"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-99035",
+   "q": "cpsc l L.L. Bean backpack child carriers, model number AC25 ac25",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-99035"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-93046",
+   "q": "kids ii Pansy Ellen Graduate Booster Seats 415",
+   "ok": true,
+   "exact": false,
+   "got": "likely cpsc-93066"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-20052",
+   "q": "baby trend Tango Mini Strollers ST31D09A",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-20052"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-25220",
+   "q": "jinjiangshiweixiaobaobeiyingtongyongpin dba Bebamour baby bath seats t186",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-25220"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-98153",
+   "q": "devan Academy wooden bunk beds 730-181",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-98153"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-05077",
+   "q": "the step Toddler Swings 7336kr",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-05077"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-01137",
+   "q": "evenflo Evenflo Joyride Car Seats/Carriers 205",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-01137"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-99108",
+   "q": "generation 2 Next Generation Pisces Cribs 67-8100",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-99108"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-09084",
+   "q": "jardine Jardine Cribs da715bc",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-09084"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-25361",
+   "q": "hangzhou christine Boyro Baby Walkers USB01",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-25361"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-00019",
+   "q": "century Lil' Napper infant swings 12476",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-00019"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-13245",
+   "q": "j c Rockland Furniture round cribs 3438314",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-13245"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-12221",
+   "q": "artsana Chicco Polly High Chair 04063803860070",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-12221"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-07186",
+   "q": "evenflo Evenflo Embrace™ Infant Car Seat/Carriers 550",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-07186"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-25228",
+   "q": "yiwushijingyudianzishangwuyouxiangongsi dba COMEONROA Infant Swings s-y608",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-25228"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-16756",
+   "q": "embrace technologies Little Lotus baby swaddles and sleeping bags 90101",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-16756"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-26168",
+   "q": "infant innovations BabyBond Retractable Safety Gates sh20",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-26168"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-01117",
+   "q": "cosco cosco Bungee Baby Jumpers and Wipe Warmers 26133",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-01117"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-24721",
+   "q": "beyond baby Vibe Bear Playyard Mattresses yxb17",
+   "ok": true,
+   "exact": false,
+   "got": "likely cpsc-24729"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-00124",
+   "q": "graco children Tot Wheels® Entertainer® Activity Center infant walkers 4032ln",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-00124"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-21735",
+   "q": "battop Foldable Infant Bath Seats bb2206",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-21735"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-00157",
+   "q": "safety 1st Mobile \"4 Wheelin\" Walkers 45701",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-00157"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-26191",
+   "q": "yixing trading KEAWIS Crib Mattress xx-bm-01",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-26191"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-97180",
+   "q": "century Century Lil' Napper infant swings 12-476",
+   "ok": true,
+   "exact": false,
+   "got": "likely cpsc-00019"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-05260",
+   "q": "pottery barn Spindle Crib 4825402",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-05260"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-01088",
+   "q": "graco children Graco highchairs 74001",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-01088"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-13032",
+   "q": "lajobi Graco®-branded Avalon Glider Rockers with Ottoman and Complete Nursery Solution (CNS) Box 2 / Katelyn Nursery Solution Glider Rockers 1062384-071",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-13032"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-01203",
+   "q": "suntome trading P-Handle Hand Trucks and Baby Walkers st-108st",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-01203"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-17057",
+   "q": "aria child Qbit strollers 10AW1GCHA4U",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-17057"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-12116",
+   "q": "kelty Kelty Single and Double Jogging Strollers 20090116",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-12116"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-10707",
+   "q": "three sisters Yayita Baby Hammocks yabn-1",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-10707"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-08176",
+   "q": "kids ii Baby Einstein Baby Neptune™ Soothing Seascape Crib Toys 30858",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-08176"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-26739",
+   "q": "skip hop Baby Sesame Street Elmo Silicone Teethers 9r263210",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-26739"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-03012",
+   "q": "oriental trading Baby Walkers 820",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-03012"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-14236",
+   "q": "oeuf Sparrow Cribs 1SPCR",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-14236"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-12104",
+   "q": "bumbleride Bumbleride Indie & Indie Twin Strollers i-110",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-12104"
+  },
+  {
+   "kind": "pos-model",
+   "id": "cpsc-05103",
+   "q": "big save Baby Walker 90111",
+   "ok": true,
+   "exact": true,
+   "got": "likely cpsc-05103"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-02071",
+   "q": "lajobi industries Molly and \"Betsy\" style wooden cribs",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-11048",
+   "q": "bassett furniture Bassettbaby drop-side cribs with external plastic hardware",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-25222",
+   "q": "costway Babyjoy Convertible 6-in-1 High Chair Activity Centers",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-26121",
+   "q": "rotinyard Baby High Chairs (convertible)",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-27092",
+   "q": "kidsview Kidsview Infant Bouncer",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-26525",
+   "q": "little grape Little Grape Land Nursing Pillows",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-26146",
+   "q": "zhengzhou bentuo YCXXKJ Baby Bath Seats",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-26264",
+   "q": "sanven technology Vevor Retractable Baby Gates",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-25029",
+   "q": "sanven technology Vevor Baby Gates",
+   "ok": true,
+   "got": "rank 2 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-26719",
+   "q": "haba HABA Rainbow Rattle Grasping and Teething Toy",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-24739",
+   "q": "hangzhou sharejoy Spring Spirit and Biloban Pack and Play Mattresses",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-25318",
+   "q": "shanghai balejiao 2-in-1 Funlio Convertible Baby High Chairs",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-26569",
+   "q": "coocoobaby CooCooBaby Baby Loungers",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-24362",
+   "q": "guangzhoutongaomaoyiyouxiangongsi d MJKSARE High Chairs",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-25166",
+   "q": "costway Babyjoy High Chairs",
+   "ok": true,
+   "got": "rank 2 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-26266",
+   "q": "hangzhouyoupengmaoyiyouxiangongsi hangzhou CheerKid Baby Bath Seats",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-25172",
+   "q": "shenzhen comfort Love Our Home Braided Crib Bumpers",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-26132",
+   "q": "little pea Little Pea Shop Crib Bumpers",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-24742",
+   "q": "forias direct Forias Pack and Play Mattresses",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-25278",
+   "q": "boyro baby Boyro Baby Convertible High Chairs",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-26094",
+   "q": "aliexpress 4-in-1 Baby Safety Cart Carriage",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-26288",
+   "q": "shenzhenshirongmanshangmaoyouxiangongsi shenzhen Trankerloop Baby Bath Seats",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-26638",
+   "q": "foshanshi kaijinying CuddleCubs Creations Baby Highchair Teething Toy Sets",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-24730",
+   "q": "bugaboo Bugaboo Dragonfly Seat Strollers",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "pos-nomodel",
+   "id": "cpsc-24311",
+   "q": "clark associates Lancaster Table & Seating Standard Height Plastic Restaurant High Chairs",
+   "ok": true,
+   "got": "rank 1 possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-96175",
+   "q": "playskool Playskool Fold N' Travel infant carriers ZQ2620X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-17104",
+   "q": "kids ii Oball Rattles ZQ2051X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-20075",
+   "q": "kolcraft Inclined sleeper accessory included with Kolcraft Cuddle 'n Care 2-in-1 Bassinet & Incline Sleepers and Preferred Position 2-in-1 Bassinet & Incline Sleepers ZQ6632X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-24014",
+   "q": "dorel juvenile Cosco Jump, Spin & Play Activity Centers ZQ2597X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-26168",
+   "q": "infant innovations BabyBond Retractable Safety Gates ZQ8266X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-26609",
+   "q": "zhangzhoushi jingqu WonderStone Infant Walkers ZQ3817X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-25206",
+   "q": "honeyjoy HONEYJOY Convertible and Foldable High Chairs ZQ8218X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-21125",
+   "q": "kolcraft Inclined sleeper accessory included with Kolcraft Cuddle 'n Care 2-in-1 Bassinet & Incline Sleepers and Preferred Position 2-in-1 Bassinet & Incline Sleepers ZQ4795X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-15185",
+   "q": "bexco DaVinci Cribs ZQ1875X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-24324",
+   "q": "zhongshanboshangkedianzishangwuyouxiangongsi dba Beberoad New Moon Travel Bassinets ZQ6552X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-24707",
+   "q": "unclewu life Infant Bath Seats ZQ8365X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-20061",
+   "q": "delta Beautyrest Beginnings Incline Sleeper with Adjustable Feeding Position for Newborns; Disney Baby Minnie Mouse Incline Sleeper with Adjustable Feeding Position for Newborns; Delta Children Deluxe 3-in-1 Activity Rocker, Feeder and Sleeper; Simmons Kids Beautyrest Deluxe 3-in-1 Activity Rocker, Feeder, and Sleeper; 3-in-1 Activity Rocker, Feeder and Incline Sleeper and others. ZQ4829X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-27072",
+   "q": "baby brezza SuperFast Sterilizer Dryers ZQ1657X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-22215",
+   "q": "monahan d UPPAbaby All-Terrain RIDGE Jogging Strollers ZQ1269X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-25236",
+   "q": "huffy Sondiko Butane Torches ZQ9240X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-20052",
+   "q": "baby trend Tango Mini Strollers ZQ6599X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-26290",
+   "q": "hebei beihong High Chairs ZQ8074X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-26307",
+   "q": "hisense Babysense Max View Baby Monitors ZQ4845X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-23770",
+   "q": "infanttech Zooby video baby monitors for cars ZQ6777X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-07084",
+   "q": "graco children Graco® Contempo™ Highchairs ZQ9283X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-23717",
+   "q": "crate and Thornhill Dark Brown and Natural Baby Cribs ZQ7457X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-20059",
+   "q": "summer infant SwaddleMe By Your Bed Sleeper inclined sleeper ZQ6088X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-08176",
+   "q": "kids ii Baby Einstein Baby Neptune™ Soothing Seascape Crib Toys ZQ7094X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-09761",
+   "q": "kaplan early La Siesta Yayita Baby Hammocks ZQ4721X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-model",
+   "id": "cpsc-27071",
+   "q": "kikea store X-VESOLJE Nursing Pillows ZQ6509X",
+   "ok": true,
+   "got": "possible"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Lumora stroller A100",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Pebblenest crib TX-22",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Tavikko high chair M5",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Brindlewood Baby play yard K900",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Quillon baby carrier S-3",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Mossberry stroller A100",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Zephyrine crib TX-22",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Oakhollow high chair M5",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Kestrelle play yard K900",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Vantoria baby carrier S-3",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Glimmerleaf stroller A100",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Corvalis crib TX-22",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Wrenfield high chair M5",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Halvora play yard K900",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Sundrift baby carrier S-3",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Pinewhistle stroller A100",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Marlowe Kids crib TX-22",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Tessaline high chair M5",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Brightfern play yard K900",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Calloway Tots baby carrier S-3",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Nimbleroot stroller A100",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Ashgrove crib TX-22",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Ellowyn high chair M5",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Faircliff play yard K900",
+   "ok": true,
+   "got": "none"
+  },
+  {
+   "kind": "neg-brand",
+   "id": "-",
+   "q": "Juniper Lane baby carrier S-3",
+   "ok": true,
+   "got": "none"
+  }
+ ]
+}
