@@ -46,13 +46,13 @@ The first index kept only 1,138 notices and missed the 2019 Rock 'n Play recall 
 
 ## Linked site: Hand-Me-Down Market (demo)
 
- is a second, made-up site: a resale page for second-hand baby gear whose listings exist only in the browser tab. Its assistant fills in a listing (), publishes it after the visitor confirms in a dialog (), and asks Recalled? first.
+`market/` is a second, made-up site: a resale page for second-hand baby gear whose listings exist only in the browser tab. Its assistant fills in a listing (`fill_listing_draft`), publishes it after the visitor confirms in a dialog (`publish_listing`), and asks Recalled? first.
 
-- Partner:  while both run on this machine (Recalled? on , the market on : on one host name the runtime's key cookie would reach the other site). Replace it in the  (, ), the manifest's  and  before hosting.
+- Partner: `http://127.0.0.1:8090/recall_check` while both run on this machine (Recalled? on `127.0.0.1:8090`, the market on `localhost:8091`: on one host name the runtime's key cookie would reach the other site). Replace it in the `.hocon` (`tools`, `link_labels`), the manifest's `allowed_peers` and `MarketPage.RECALLED` before hosting.
 - The consent card shows "Recalled?", its host and the first 140 characters of the request. **Always allow** skips the card for that host until the page is reloaded.
 - A request holds the brand, product and model number or UPC. The assistant is told never to put names, emails, phone numbers or codes in it; the runtime does not filter it, so the visitor checks it on the card.
 - Recalled?'s network then runs in this browser on the visitor's key, with the three reads its bridge shares. One call used about 2,500 tokens in the skill's own test of a similar call; it costs more than the card's estimate.
-- Each listing also links to Recalled? with the item filled in (), which needs no AI at all.
+- Each listing also links to Recalled? with the item filled in (`?brand=…&product=…&model=…`), which needs no AI at all.
 
 ## Run it
 
