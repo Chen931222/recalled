@@ -180,7 +180,7 @@ test("a brand that is in no notice gets 'No match found', never 'safe'", async (
   assert.equal(receipt.result.level, "none");
   assert.deepEqual(receipt.result.matches, []);
   assert.match(receipt.result.meaning, /does not mean the product is safe/);
-  assert.equal(receipt.result.searched.notices, 1138);
+  assert.equal(receipt.result.searched.notices, Checker.about().counts.CPSC + Checker.about().counts["Health Canada"]);
   for (const text of Object.values(Checker.LEVELS)) {
     assert.ok(!/\bis safe\b/.test(text.replace("does not mean the product is safe", "")), text);
   }

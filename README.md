@@ -8,12 +8,12 @@ A static website plus an [Open Agentic Web](https://github.com/cognizant-ai-labs
 
 | Source | Notices kept | Licence |
 |---|---|---|
-| U.S. CPSC Recalls API | 854 | U.S. government work |
-| Health Canada Recalls and Safety Alerts | 284 | Open Government Licence – Canada |
+| U.S. CPSC Recalls API | 2,007 | U.S. government work |
+| Health Canada Recalls and Safety Alerts | 1,332 | Open Government Licence – Canada |
 
-Only baby and kids gear: strollers, cribs, bassinets, car seats, high chairs, play yards, carriers, baby toys and similar. 1,138 notices; 295 list model numbers, 15 list UPCs (index built 2026-11-23, newest notice 2026-11-19).
+Baby and kids gear: strollers, cribs, bassinets, car seats, high chairs, play yards, carriers, loungers, toys and children's clothing, plus anything a notice's title names as a baby's, toddler's or child's product (grown-up products recalled for child poisoning, such as baby oil or medicine packaging, are left out). 3,339 notices; 436 list model numbers, 61 list UPCs (index built 2026-11-23, newest notice 2026-11-19).
 
-The CPSC API leaves its model field empty, so model numbers are read out of each notice's description. About three in four list none. For those, the best answer is a possible match that you confirm by reading the notice.
+The CPSC API leaves its model field empty, so model numbers are read out of each notice's description. About seven in eight list none. For those, the best answer is a possible match that you confirm by reading the notice.
 
 ## Answers
 
@@ -23,7 +23,7 @@ The CPSC API leaves its model field empty, so model numbers are read out of each
 
 ## Measured
 
-`node tests/eval.mjs`: 125 synthetic queries built from the notices.
+`node tests/eval.mjs`: 125 synthetic queries built from the notices, plus every notice of 1 million units or more.
 
 | Set | Result |
 |---|---|
@@ -31,8 +31,11 @@ The CPSC API leaves its model field empty, so model numbers are read out of each
 | Brand + product, notice lists no model | 25/25 in the top 3 |
 | Same brand + product, model not in the notice | 25/25 not "likely" for that notice |
 | Brands not in any notice | 25/25 "none" |
+| Every notice of 1 million units or more: shortest brand + first five words of the product | 61/62 in the top 5 (missed: Peg Perego Venezia and Pliko-P3 strollers, because "Pliko-P3" reads as a model number the notice does not list) |
 
 Limits of this measurement: the queries are built from the notices, not typed by real people. The first run scored 117/125. I then changed the matcher (14-digit codes count as UPCs; "2-in-1" is not a model) and also changed two test definitions after seeing the failures (a match to another notice listing the same model counts as right; negatives skip notices whose product name contains a model). Treat 125/125 as "fits its own test set", not as accuracy on real listings.
+
+The first index kept only 1,138 notices and missed the 2019 Rock 'n Play recall (4.7 million sleepers) and the 2021 Boppy lounger recall (3.3 million): the filter wanted the word "infant" or "baby" in the description, and those notices put it only in the hazard. Spot checks found it; the filter now reads the hazards too, and the 1-million-unit set was added afterwards so a miss like that shows up as a number.
 
 ## Agent network
 

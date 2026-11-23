@@ -34,11 +34,19 @@ GEAR = re.compile(
     r"infant (?:seats?|loungers?|bedding|carriers?)|baby carriers?|carriers?|slings?|changing (?:tables?|pads?)|"
     r"bath (?:seats?|tubs?)|nursing pillows?|teethers?|pacifiers?|rattles?|baby monitors?|toddler beds?|bunk beds?|"
     r"dressers?|chests? of drawers|bibs?|sippy cups?|baby bottles?|bottle warmers?|sterilizers?|activity (?:centers?|gyms?)|"
-    r"jumpers?|kick scooters?|balance bikes?|tricycles?|ride-on)\b",
+    r"jumpers?|kick scooters?|balance bikes?|tricycles?|ride-on|loungers?|baby gyms?|play ?mats?|toddler towers?|"
+    r"learning towers?|potty|potties|bed rails?|soothers?|gliders?)\b",
     re.I,
 )
-KIDS = re.compile(r"\b(baby|babies|infants?|toddlers?|children'?s|kids'?|juvenile|nursery|newborns?)\b", re.I)
-HC_CATS = ("Infant products", "Child Car Seat", "Booster Seat")
+KIDS = re.compile(r"\b(baby|babies|infants?|toddlers?|children'?s|child|kids'?|juvenile|nursery|newborns?)\b", re.I)
+# Named for a child but not gear: packaging and grown-up products whose hazard is that a
+# child might swallow them (baby oil, medicine, lighters). Left out.
+NOT_GEAR = re.compile(
+    r"\b(poison(?:ing)?|child[- ]resistant|packaging|oils?|lotions?|medic(?:ine|ation)s?|drugs?|"
+    r"supplements?|vitamins?|cosmetics?|lighters?|batteries)\b",
+    re.I,
+)
+HC_CATS = ("Infant products", "Child Car Seat", "Booster Seat", "Toys and games")
 
 MODEL_RE = re.compile(
     r"model (?:numbers?|nos?\.?|#)\s*(?:are|is|include|includes|:)?\s*([^.;]{1,400})", re.I
@@ -80,7 +88,13 @@ def cpsc_records(rows: list) -> list[dict]:
     for r in rows:
         prods = r.get("Products") or []
         hay = " ".join([r.get("Title") or ""] + [f"{p.get('Name') or ''} {p.get('Type') or ''}" for p in prods])
-        if not (GEAR.search(hay) and (KIDS.search(hay + " " + (r.get("Description") or "")) or re.search(r"crib|stroller|car seat|bassinet|play ?yard|high ?chair|baby", hay, re.I))):
+        # Gear named in the title or product, for a child anywhere in the notice (the 2019
+        # Rock 'n Play notice never says "infant" in its description, only in its hazards),
+        # or a product the title itself calls a baby's, toddler's or child's.
+        everything = " ".join([hay, r.get("Description") or ""] + [str(v) for k in ("Hazards", "Injuries") for h in (r.get(k) or []) for v in h.values() if isinstance(v, str)])
+        gear = GEAR.search(hay) and (KIDS.search(everything) or re.search(r"crib|stroller|car seat|bassinet|play ?yard|high ?chair|baby|sleeper", hay, re.I))
+        named = KIDS.search(hay) and not NOT_GEAR.search(hay)
+        if not (gear or named):
             continue
         desc = clean(r.get("Description"))
         firms = [clean(f.get("Name")) for key in ("Manufacturers", "Importers", "Distributors") for f in (r.get(key) or []) if f.get("Name")]
@@ -100,7 +114,7 @@ def cpsc_records(rows: list) -> list[dict]:
             "hazard": "; ".join(clean(h.get("Name")) for h in (r.get("Hazards") or []) if h.get("Name")),
             "remedy": "; ".join(clean(h.get("Name")) for h in (r.get("Remedies") or []) if h.get("Name")),
             "units": "; ".join(clean(p.get("NumberOfUnits")) for p in prods if p.get("NumberOfUnits")),
-            "description": desc[:900],
+            "description": desc[:500],
             "url": r.get("URL") or "",
         })
     return out
@@ -112,7 +126,10 @@ def hc_records(rows: list) -> list[dict]:
         cat = r.get("Category") or ""
         title = clean(r.get("Title"))
         product = clean(r.get("Product"))
-        if not (any(c in cat for c in HC_CATS) or (GEAR.search(f"{title} {product}") and KIDS.search(f"{title} {product} {cat}"))):
+        text = f"{title} {product}"
+        if NOT_GEAR.search(text):
+            continue
+        if not (any(c in cat for c in HC_CATS) or KIDS.search(text) or (GEAR.search(text) and KIDS.search(f"{text} {cat} {r.get('Issue') or ''}"))):
             continue
         if (r.get("Organization") or "") not in ("Consumer product safety", "TC"):
             continue
@@ -132,7 +149,7 @@ def hc_records(rows: list) -> list[dict]:
             "hazard": clean(r.get("Issue")),
             "remedy": "",
             "units": "",
-            "description": clean(r.get("What you should do"))[:600],
+            "description": clean(r.get("What you should do"))[:400],
             "url": r.get("URL") or "",
         })
     return out

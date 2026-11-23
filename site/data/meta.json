@@ -1,11 +1,11 @@
 {
- "built": "2026-11-23T11:29:33+00:00",
+ "built": "2026-11-23T11:52:45+00:00",
  "counts": {
-  "CPSC": 854,
-  "Health Canada": 284
+  "CPSC": 2007,
+  "Health Canada": 1332
  },
- "with_model_numbers": 295,
- "with_upcs": 15,
+ "with_model_numbers": 436,
+ "with_upcs": 61,
  "newest": "2026-11-19",
  "sources": [
   {

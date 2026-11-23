@@ -48,6 +48,25 @@ fake.forEach((b, i) => {
   rows.push({ kind: 'neg-brand', id: '-', q, ok: res.level === 'none', got: res.level + (res.matches[0] ? ' ' + res.matches[0].record.id : '') });
 });
 
+// Big recalls: every notice whose units line says 1 million or more, chosen by that rule
+// alone, not by hand. Query = the shortest brand on the notice + the first five words of
+// its product name. Right if that notice is in the top 5. Added 2026-11-23 after spot
+// checks found the Rock 'n Play and Boppy lounger notices missing from the index.
+const unitsOf = (s) => {
+  const m = /([\d.,]+)\s*million/i.exec(s || '');
+  if (m) return parseFloat(m[1].replace(/,/g, '')) * 1e6;
+  const n = /\b(\d{1,3}(?:,\d{3})+|\d{4,})\b/.exec(s || '');
+  return n ? parseFloat(n[1].replace(/,/g, '')) : 0;
+};
+for (const r of recs.filter((x) => unitsOf(x.units) >= 1e6 && x.brands.length && x.products.length)) {
+  const brand = [...r.brands].sort((a, b) => a.length - b.length)[0].split(/,\s*of\b/i)[0];
+  const bw = new Set(normBrand(brand).split(' '));
+  const product = r.products[0].replace(/^all models of\s+/i, '').split(/\s+/).filter((w) => !bw.has(w.toLowerCase().replace(/[^a-z0-9]/g, ''))).slice(0, 5).join(' ');
+  const res = check(P, { brand, product });
+  const hit = res.matches.findIndex((x) => x.record.id === r.id);
+  rows.push({ kind: 'big', id: r.id, q: `${brand} | ${product}`, ok: hit >= 0, got: hit >= 0 ? `rank ${hit + 1} ${res.matches[hit].level}` : `${res.level}, not in top 5` });
+}
+
 const by = {};
 for (const r of rows) { by[r.kind] ||= [0, 0]; by[r.kind][1]++; if (r.ok) by[r.kind][0]++; }
 const lines = Object.entries(by).map(([k, [ok, n]]) => `${k.padEnd(12)} ${ok}/${n}`);
