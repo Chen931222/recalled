@@ -68,3 +68,13 @@ JavaScript, Python, Open Agentic Web runtime and agentify-website skill, CPSC Re
 - Demo partner site: https://hand-me-down-market-demo.vercel.app/
 - Network URL: https://chen931222.github.io/recalled/recall_check
 - Code: https://github.com/Chen931222/recalled
+
+## Image gallery
+
+Upload in this order from `contest/gallery/` (1500×1000, 3:2, captured 2026-11-23 from the deployed code with the check filled in from the address bar; no AI, no key):
+
+1. `01-cover-likely-recalled.png`: the check page, model 87150 entered, "Likely recalled".
+2. `02-model-listed.png`: the notice card: model 87150 is listed, hazard, what to do, official link.
+3. `03-all-models-of-a-line.png`: Rock 'n Play: a notice with no model numbers that covers the whole product line.
+4. `04-no-match-is-not-safe.png`: a made-up brand: "No match found", and why that is not "safe".
+5. `05-partner-site.png`: Hand-Me-Down Market, a second site, with Recalled? listed as its partner network.
