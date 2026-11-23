@@ -23,7 +23,7 @@
     "byok_router": "https://api.otari.ai/api/v1"
   },
   "allowed_peers": [
-    "http://127.0.0.1:8090"
+    "https://chen931222.github.io"
   ],
   "peer_policy": {
     "mode": "closed",

@@ -7,9 +7,9 @@ import { MarketStore } from "./market-store.js";
 export class MarketPage {
   /**
    * Recalled?'s page. The link in the page and the read action both use this one value.
-   * It is Recalled? served on this machine; replace it with its https address when hosted.
+   * For a local test of an unpublished Recalled?, use "http://127.0.0.1:8090/".
    */
-  static RECALLED = "http://127.0.0.1:8090/";
+  static RECALLED = "https://chen931222.github.io/recalled/";
 
   /**
    * Find the page's elements, draw the listings and wire the form.

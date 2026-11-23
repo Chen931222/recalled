@@ -418,7 +418,7 @@ class AgentifiedSiteTest {
       assert.ok(instructions.includes("is empty or starts with \"The user declined\", \"Skipped\" or \"Error from\", it did not answer: say so."));
     }
     assert.ok(instructions.includes("This site cannot: take payment, ship, hold an item"));
-    assert.ok(instructions.includes("ask recall_check"), "The front agent should say when to ask Recalled?.");
+    assert.ok(instructions.includes("ask recalled_recall_check"), "The front agent should say when to ask Recalled?.");
     assert.ok(instructions.includes("never call an item safe"));
   }
 
@@ -1002,14 +1002,14 @@ class AgentifiedSiteTest {
     const ctx = AgentifiedSiteTest.context(loaded, registry, new ScriptedModel([]), AgentifiedSiteTest.approve);
     const spec = loaded.network.getAgentSpec(loaded.network.findFrontMan());
     const table = await buildToolTable(ctx, spec, [], null);
-    assert.ok(table.toolByName.has("recall_check"), "The front agent is not offered recall_check.");
-    assert.deepEqual(loaded.manifest.allowed_peers, ["http://127.0.0.1:8090"]);
+    assert.ok(table.toolByName.has("recalled_recall_check"), "The front agent is not offered recalled_recall_check.");
+    assert.deepEqual(loaded.manifest.allowed_peers, ["https://chen931222.github.io"]);
     const state = await AgentifiedSiteTest.readState(registry);
-    assert.equal(state.recallCheck.link, "http://127.0.0.1:8090/");
-    assert.match(state.recallCheck.draftLink, /^http:\/\/127\.0\.0\.1:8090\//);
+    assert.equal(state.recallCheck.link, "https://chen931222.github.io/recalled/");
+    assert.match(state.recallCheck.draftLink, /^https:\/\/chen931222\.github\.io\/recalled\//);
     // A listing's own link fills Recalled?'s form with that item.
     const link = new URL(document.getElementById("listings").children[0].children.at(-1).href);
-    assert.equal(link.origin, "http://127.0.0.1:8090");
+    assert.equal(link.origin, "https://chen931222.github.io");
     assert.ok(link.searchParams.get("brand"));
   }
 
