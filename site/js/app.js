@@ -37,6 +37,26 @@ export class RecallPage {
     for (const field of Object.values(this.fields)) {
       field.addEventListener("input", RecallPage.clearValidity.bind(null, field));
     }
+    this.checkFromAddress();
+  }
+
+  /**
+   * Another site can link here with the item filled in, such as
+   * ?brand=Pearhead&product=learning%20set&model=87150. Fill the form and check it.
+   */
+  checkFromAddress() {
+    const params = new URL(this.doc.URL).searchParams;
+    const values = {};
+    let any = false;
+    for (const key of Object.keys(this.fields)) {
+      const value = (params.get(key) || "").slice(0, Checker.MAX[key]);
+      this.fields[key].value = value;
+      values[key] = value;
+      any = any || Boolean(value);
+    }
+    if (any) {
+      this.run(values);
+    }
   }
 
   /**

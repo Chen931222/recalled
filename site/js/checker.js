@@ -14,7 +14,7 @@ export class Checker {
 
   /** What each level means, word for word the same on the page and for the agents. */
   static LEVELS = {
-    likely: "Likely recalled: a model number or UPC you gave is listed in an official recall notice.",
+    likely: "Likely recalled: a model number or UPC you gave is listed in an official recall notice, or the notice covers all models of the product line you named.",
     possible: "Possible match: same brand and kind of product as a recall notice, but nothing you gave pins it to the recalled units. Compare the model numbers, date codes or description in the notice.",
     none: "No match found in the notices searched. This does not mean the product is safe: it may be listed in a country or year this index does not cover, or under details you did not give.",
   };

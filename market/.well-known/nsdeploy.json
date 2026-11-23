@@ -1,0 +1,18 @@
+{
+  "protocol": "nsdeploy-link/v1",
+  "exports": [
+    {
+      "network": "hand_me_down_market",
+      "front_man": "market_assistant",
+      "aliases": [
+        "hand_me_down_market",
+        "market_assistant"
+      ],
+      "url": "hand_me_down_market"
+    }
+  ],
+  "imports": [],
+  "link_updates": {
+    "mode": "browser-local"
+  }
+}

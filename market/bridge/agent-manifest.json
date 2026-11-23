@@ -1,0 +1,10 @@
+{
+  "networks": [
+    {
+      "name": "hand_me_down_market"
+    }
+  ],
+  "actions": {
+    "version": 1
+  }
+}

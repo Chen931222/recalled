@@ -1,0 +1,79 @@
+{
+  "brand": "Hand-Me-Down Market Assistant",
+  "networks": [
+    {
+      "name": "hand_me_down_market",
+      "front_man": "market_assistant",
+      "hocon": "./hand_me_down_market.network.json",
+      "description": "Tell me what you are selling. I fill in the listing, ask Recalled? whether it was recalled, and publish it once you confirm.",
+      "tags": [
+        "agentified-website"
+      ],
+      "sample_queries": [
+        "I want to sell my Pearhead infant learning set, model 87150, like new, for $12.",
+        "Is the Rock 'n Play sleeper listing safe to buy?",
+        "List my Joovy Nook high chair, good condition, $40.",
+        "Can you ship it to me or take payment?"
+      ]
+    }
+  ],
+  "llm_router": {
+    "base_url": "https://api.otari.ai/api/v1",
+    "mock": false,
+    "byok_router": "https://api.otari.ai/api/v1"
+  },
+  "allowed_peers": [
+    "http://127.0.0.1:8090"
+  ],
+  "peer_policy": {
+    "mode": "closed",
+    "deny_origins": [],
+    "note": "Calls only the partner site in allowed_peers (Recalled?), after the visitor agrees, plus page-local actions."
+  },
+  "agent_mcp": {
+    "protocol": "nsdeploy-agent-mcp/v1",
+    "network": "hand_me_down_market",
+    "front_man": "market_assistant",
+    "available": false,
+    "reason": "This is a static bundle; a public MCP facade requires an application host."
+  },
+  "theme": {
+    "primary": "#1f5c4a"
+  },
+  "linking": {
+    "protocol": "nsdeploy-link/v1",
+    "exports": [
+      {
+        "network": "hand_me_down_market",
+        "front_man": "market_assistant",
+        "aliases": [
+          "hand_me_down_market",
+          "market_assistant"
+        ],
+        "url": "hand_me_down_market"
+      }
+    ],
+    "imports": [],
+    "link_updates": {
+      "mode": "browser-local"
+    }
+  },
+  "deployment": {
+    "mode": "static",
+    "self_contained_runtime": true,
+    "browser_mock": false,
+    "direct_byok": true,
+    "direct_mcp_requires_cors": true,
+    "public_mcp_facade": false
+  },
+  "actions": {
+    "version": 1,
+    "module": "./site-actions.js",
+    "bridge": "./bridge/action-bridge.html",
+    "agentTools": [
+      "get_market_state",
+      "fill_listing_draft",
+      "publish_listing"
+    ]
+  }
+}

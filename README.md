@@ -17,7 +17,7 @@ The CPSC API leaves its model field empty, so model numbers are read out of each
 
 ## Answers
 
-- **Likely recalled**: a model number or UPC you gave is listed in a notice.
+- **Likely recalled**: a model number or UPC you gave is listed in a notice, or the notice says it covers all models of the product line you named ("All models of Rock 'n Play Sleepers").
 - **Possible match**: same brand and kind of product, nothing exact.
 - **No match found**: none of the notices searched list it. Not the same as safe.
 
@@ -44,15 +44,26 @@ The first index kept only 1,138 notices and missed the 2019 Rock 'n Play recall 
 - The bridge shares `check_recall`, `get_recall_notice` and `get_about` with every site (`callerOrigins: ["*"]`): they return only public notices. A partner adds `http://<host>` to `allowed_peers` and the network URL to its agent's `tools`.
 - The assistant answers only from tool results, never says a product is safe, and gives the official notice link for every match.
 
+## Linked site: Hand-Me-Down Market (demo)
+
+ is a second, made-up site: a resale page for second-hand baby gear whose listings exist only in the browser tab. Its assistant fills in a listing (), publishes it after the visitor confirms in a dialog (), and asks Recalled? first.
+
+- Partner:  while both run on this machine (Recalled? on , the market on : on one host name the runtime's key cookie would reach the other site). Replace it in the  (, ), the manifest's  and  before hosting.
+- The consent card shows "Recalled?", its host and the first 140 characters of the request. **Always allow** skips the card for that host until the page is reloaded.
+- A request holds the brand, product and model number or UPC. The assistant is told never to put names, emails, phone numbers or codes in it; the runtime does not filter it, so the visitor checks it on the card.
+- Recalled?'s network then runs in this browser on the visitor's key, with the three reads its bridge shares. One call used about 2,500 tokens in the skill's own test of a similar call; it costs more than the card's estimate.
+- Each listing also links to Recalled? with the item filled in (), which needs no AI at all.
+
 ## Run it
 
 ```shell
 python scripts/build_data.py              # download both sources and rebuild site/data (or --offline)
 git clone --depth 1 https://github.com/cognizant-ai-labs/agentic-web vendor/agentic-web
 node vendor/agentic-web/skills/agentify-website/scripts/build_network.mjs site/recall_check.hocon --manifest site/agent-manifest.json --check
-node --test "site/tests/*.test.mjs"       # 16 tests, scripted model, no key
+node --test "site/tests/*.test.mjs" "market/tests/*.test.mjs"   # 39 tests, scripted model, no key
 node tests/eval.mjs                       # matcher evaluation
-node vendor/agentic-web/skills/agentify-website/scripts/serve_site.mjs site --port 8090
+node vendor/agentic-web/skills/agentify-website/scripts/serve_site.mjs site --port 8090 --open-as 127.0.0.1
+node vendor/agentic-web/skills/agentify-website/scripts/serve_site.mjs market --port 8091 --open-as localhost
 ```
 
 When hosted, serve `site/` over HTTPS. Send `Access-Control-Allow-Origin: *` on `agent-manifest.json`, `recall_check.network.json`, `links.json`, `agent-mcp.json`, `.well-known/*` and `bridge/*`, and do not block framing of `bridge/action-bridge.html` (see the skill's `references/bundle_and_hosting.md`).
@@ -63,6 +74,7 @@ When hosted, serve `site/` over HTTPS. Send `Access-Control-Allow-Origin: *` on 
 - No photo or label reading.
 - Static hosting with the skill's patched copy of the nsdeploy runtime (`site/runtime/`, Apache 2.0, unchanged).
 - The network file, including its instructions, is public.
+- Two points from an automated security review of the vendored runtime, left unedited as the skill asks: on `localhost` only, the runtime saves the visitor's provider key in a cookie every local site can read (use a key with a low spending limit for local tests); and a partner given as a relative URL is resolved against the top page, not the calling network. Both networks here use absolute partner URLs.
 - The LLM provider the visitor picks must allow CORS.
 
 Not affiliated with CPSC or Health Canada.

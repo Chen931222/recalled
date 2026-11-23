@@ -75,3 +75,7 @@ const fails = rows.filter((r) => !r.ok);
 console.log(`\nfailures (${fails.length}):`);
 for (const f of fails.slice(0, 25)) console.log(`- [${f.kind}] ${f.q}  →  ${f.got}  (want ${f.id})`);
 writeFileSync(new URL('./eval-result.json', import.meta.url), JSON.stringify({ by, rows }, null, 1));
+
+// Fail the run (and the daily data update) if any set drops below what it scored on 2026-11-23.
+const FLOOR = { "pos-model": 50, "pos-nomodel": 24, "neg-model": 25, "neg-brand": 25, big: 60 };
+for (const [k, min] of Object.entries(FLOOR)) if ((by[k]?.[0] ?? 0) < min) { console.error(`${k} fell below ${min}`); process.exitCode = 1; }

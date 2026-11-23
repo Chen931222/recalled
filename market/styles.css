@@ -1,0 +1,97 @@
+/* Hand-Me-Down Market (demo). A plain classifieds page, deliberately unlike Recalled?, so a
+   viewer can tell the two sites apart in the demo. */
+:root {
+  --bg: #ffffff;
+  --panel: #f3f6f4;
+  --ink: #17211d;
+  --ink-2: #4b5a54;
+  --line: #d5ddd9;
+  --green: #1f5c4a;
+  --red: #a3241b;
+  --font: -apple-system, "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { background: var(--bg); color: var(--ink); }
+body { margin: 0; font: 400 1rem/1.5 var(--font); background: var(--bg); }
+a { color: var(--green); }
+.wrap { max-width: 64rem; margin: 0 auto; padding-inline: 20px; }
+
+.top { background: var(--green); color: #fff; }
+.top .wrap { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 24px; padding-block: 14px; }
+.logo { margin: 0; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.01em; }
+.demo-note { margin: 0; font-size: 0.88rem; color: #e3efe9; max-width: 36rem; }
+
+main > section { padding: 32px 0; border-bottom: 1px solid var(--line); }
+h1, h2 { margin: 0 0 8px; line-height: 1.2; }
+h1 { font-size: 1.8rem; }
+h2 { font-size: 1.4rem; }
+.sub { margin: 0 0 18px; color: var(--ink-2); max-width: 40rem; }
+
+#listing-form {
+  display: grid;
+  grid-template-columns: 10rem minmax(0, 22rem);
+  gap: 10px 16px;
+  align-items: center;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 36rem;
+}
+#listing-form label { font-weight: 600; }
+.opt { font-weight: 400; color: var(--ink-2); font-size: 0.88rem; }
+#listing-form input, #listing-form select {
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid #9fb0a8;
+  border-radius: 6px;
+  padding: 9px 10px;
+  min-height: 44px;
+  width: 100%;
+}
+#listing-form input:focus-visible, #listing-form select:focus-visible { outline: 3px solid var(--green); outline-offset: 1px; }
+.error { grid-column: 1 / -1; margin: 0; color: var(--red); font-weight: 600; }
+#listing-form button {
+  grid-column: 2;
+  justify-self: start;
+  font: 700 1rem/1 var(--font);
+  color: #fff;
+  background: var(--green);
+  border: 0;
+  border-radius: 6px;
+  padding: 13px 22px;
+  min-height: 46px;
+  cursor: pointer;
+}
+#listing-form button:hover { background: #163f33; }
+.published { margin: 14px 0 0; font-weight: 600; color: var(--green); }
+
+.count { font-weight: 400; color: var(--ink-2); }
+.listings { list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); gap: 14px; }
+.listing { border: 1px solid var(--line); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; gap: 4px; }
+.listing h3 { margin: 0; font-size: 1.05rem; }
+.listing-meta { margin: 0; font-size: 0.88rem; color: var(--ink-2); }
+.price { margin: 4px 0 6px; font-size: 1.3rem; font-weight: 800; }
+.listing a { font-weight: 600; font-size: 0.92rem; margin-top: auto; }
+
+.foot { padding-block: 24px 48px; font-size: 0.88rem; color: var(--ink-2); }
+
+@media (max-width: 640px) {
+  #listing-form { grid-template-columns: 1fr; }
+  #listing-form button { grid-column: 1; }
+  .assistant-panels { grid-template-columns: 1fr; }
+}
+
+/* The confirmation dialog site.js adds to <body> for publish_listing. */
+.assistant-review { max-width: 30rem; border: 1px solid var(--line); border-radius: 10px; padding: 22px 24px; color: var(--ink); font: inherit; }
+.assistant-review::backdrop { background: rgb(23 33 29 / 0.45); }
+.assistant-review h2 { font-size: 1.25rem; margin-bottom: 6px; }
+.assistant-review dl { display: grid; grid-template-columns: 8rem 1fr; gap: 4px 12px; margin: 14px 0; }
+.assistant-review dt { font-weight: 600; }
+.assistant-review dd { margin: 0; overflow-wrap: anywhere; }
+.assistant-review details { margin-bottom: 16px; font-size: 0.9rem; color: var(--ink-2); }
+.assistant-review pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+.assistant-review button { font: 700 1rem/1 var(--font); min-height: 44px; padding: 12px 18px; border-radius: 6px; cursor: pointer; margin: 0 8px 8px 0; color: #fff; background: var(--green); border: 1px solid var(--green); }
+.assistant-review button.assistant-decline { color: var(--green); background: #fff; }

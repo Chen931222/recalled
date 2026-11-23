@@ -20,7 +20,7 @@ const PAGE_HTML = await readFile(new URL("../index.html", import.meta.url), "utf
 globalThis.document = StubDocument.fromHtml(PAGE_HTML, `${BASE}/`);
 const { registerActions } = await import("../site-actions.js");
 const { AssistantMount } = await import("../site.js");
-const { App } = await import("../js/app.js");
+const { App, RecallPage } = await import("../js/app.js");
 const { Checker } = await import("../js/checker.js");
 
 class RecalledTest {
@@ -275,4 +275,30 @@ test("the page has no template text, and site.js has no dialog to fill", () => {
   assert.deepEqual(AssistantMount.DIALOGS, {}, "No action is irreversible.");
   assert.ok(AssistantMount.GREETING.length > 20 && !AssistantMount.GREETING.includes("TODO"));
   assert.deepEqual(AssistantMount.reviewDetails("check_recall", {}), {});
+});
+
+test("a link from another site fills the form and checks the item", () => {
+  const doc = StubDocument.fromHtml(PAGE_HTML, `${BASE}/?brand=Pearhead&product=Infant%20Learning%20Toy%20Set&model=87150`);
+  const page = new RecallPage(doc);
+  assert.equal(doc.getElementById("q-model").value, "87150");
+  assert.equal(page.last.level, "likely");
+  assert.equal(doc.getElementById("result-level").textContent, "Likely recalled");
+  assert.notEqual(doc.getElementById("result-level").focused, true, "Opening a link moves no focus.");
+  const plain = new RecallPage(StubDocument.fromHtml(PAGE_HTML, `${BASE}/`));
+  assert.equal(plain.last, null);
+});
+
+test("a notice that covers all models of a line is likely for that line, but not for the brand's other products", async () => {
+  const line = (await RecalledTest.call("check_recall", { brand: "Fisher-Price", product: "Rock n Play Sleeper" })).result;
+  assert.equal(line.level, "likely");
+  assert.match(line.matches[0].why, /all models/);
+  assert.match(line.matches[0].title, /Rock 'n Play/);
+  const generic = (await RecalledTest.call("check_recall", { brand: "Fisher-Price", product: "swing" })).result;
+  assert.equal(generic.level, "possible", "A kind of product alone does not name the line.");
+});
+
+test("a brand typed without 'The' or 'Company' still finds its notices", async () => {
+  const r = (await RecalledTest.call("check_recall", { brand: "Boppy", product: "Newborn Lounger" })).result;
+  assert.notEqual(r.level, "none");
+  assert.ok(r.matches.some((m) => m.id === "cpsc-21198"));
 });

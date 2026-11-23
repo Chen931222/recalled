@@ -145,7 +145,7 @@
   {
    "kind": "pos-model",
    "id": "cpsc-10076",
-   "q": "the timberland Precious Moments Angel Tree Toppers 34872",
+   "q": "timberland Precious Moments Angel Tree Toppers 34872",
    "ok": true,
    "exact": true,
    "got": "likely cpsc-10076"
@@ -698,7 +698,7 @@
   {
    "kind": "neg-model",
    "id": "cpsc-10076",
-   "q": "the timberland Precious Moments Angel Tree Toppers ZQ9732X",
+   "q": "timberland Precious Moments Angel Tree Toppers ZQ9732X",
    "ok": true,
    "got": "possible"
   },
@@ -952,7 +952,7 @@
    "id": "cpsc-25009",
    "q": "Fisher-Price | Fisher-Price Snuga Swings",
    "ok": true,
-   "got": "rank 1 possible"
+   "got": "rank 1 likely"
   },
   {
    "kind": "big",
@@ -966,14 +966,14 @@
    "id": "cpsc-23150",
    "q": "Epoch Everlasting Play | Calico Critters® Animal Figures and",
    "ok": true,
-   "got": "rank 1 possible"
+   "got": "rank 1 likely"
   },
   {
    "kind": "big",
    "id": "cpsc-23088",
    "q": "Fisher-Price | Rock 'n Play Sleepers",
    "ok": true,
-   "got": "rank 1 possible"
+   "got": "rank 1 likely"
   },
   {
    "kind": "big",
@@ -1001,7 +1001,7 @@
    "id": "cpsc-19105",
    "q": "Fisher-Price | Rock 'n Play Sleeper",
    "ok": true,
-   "got": "rank 1 possible"
+   "got": "rank 2 likely"
   },
   {
    "kind": "big",

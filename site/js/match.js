@@ -10,10 +10,17 @@ const STOP = new Set(['the', 'and', 'with', 'for', 'of', 'to', 'in', 'due', 'ris
 const KIND = /\b(stroller|pram|crib|bassinet|cradle|car seat|booster|high ?chair|play ?yard|playpen|walker|swing|gate|bouncer|rocker|sleeper|carrier|sling|changing (?:table|pad)|bath (?:seat|tub)|pillow|teether|pacifier|rattle|monitor|toddler bed|bunk bed|dresser|chest|bib|sippy|bottle|warmer|sterilizer|activity (?:center|gym)|jumper|scooter|balance bike|tricycle|ride-on|mattress|lounger|seat)s?\b/gi;
 
 export const norm = (s) => (s || '').toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim();
-export const normBrand = (s) => norm((s || '').split(/,\s*of\b/i)[0]).replace(LEGAL, ' ').replace(/\s+/g, ' ').trim();
+export const normBrand = (s) => norm((s || '').split(/,\s*of\b/i)[0]).replace(LEGAL, ' ').replace(/\s+/g, ' ').trim().replace(/^the /, '');
 export const normModel = (s) => (s || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
 const kinds = (s) => [...new Set((norm(s).match(KIND) || []).map((k) => k.replace(/\s+/g, ' ').replace(/s$/, '')))];
 const words = (s) => norm(s).split(' ').filter((w) => w.length > 2 && !STOP.has(w));
+// Words that say what kind of thing it is, or who it is for, not which product line.
+const GENERIC = new Set(['baby', 'babies', 'infant', 'infants', 'kids', 'kid', 'children', 'child', 'toddler', 'toddlers', 'newborn', 'all', 'models', 'model', 'sizes', 'styles', 'colors', 'versions',
+  'stroller', 'strollers', 'pram', 'crib', 'cribs', 'bassinet', 'cradle', 'car', 'seat', 'seats', 'booster', 'high', 'chair', 'chairs', 'play', 'yard', 'yards', 'playpen', 'walker', 'swing', 'swings',
+  'gate', 'bouncer', 'rocker', 'rocking', 'sleeper', 'sleepers', 'carrier', 'carriers', 'sling', 'changing', 'table', 'pad', 'bath', 'tub', 'pillow', 'teether', 'pacifier', 'rattle', 'monitor', 'bed', 'beds',
+  'bunk', 'dresser', 'chest', 'bib', 'sippy', 'bottle', 'warmer', 'sterilizer', 'activity', 'center', 'gym', 'jumper', 'scooter', 'bike', 'tricycle', 'mattress', 'lounger', 'loungers', 'toy', 'toys', 'set', 'sets']);
+// "All models of Rock 'n Play Sleepers": the notice covers every unit of that product line.
+const ALL = /\ball (?:models|sizes|styles|colors|versions)\b|\brecalls all\b/i;
 
 /** Precompute once per record list. */
 export function prepare(records) {
@@ -26,6 +33,7 @@ export function prepare(records) {
       words: new Set(words(text)),
       models: new Set((r.models || []).map(normModel).filter((m) => m.length >= 3 && !/^\d+IN\d+$/.test(m))),
       upcs: new Set((r.upcs || []).filter((u) => u.length >= 8)),
+      allModels: ALL.test([r.title, ...(r.products || [])].join(' ')),
     };
   });
 }
@@ -65,11 +73,18 @@ export function check(prepared, query, limit = 5) {
     let level = null;
     let why = '';
     let score = 0;
+    // Product-line words both share: not the brand, not the kind of product.
+    let line = 0;
+    if (p.allModels && brand) {
+      const brandWords = new Set(p.brands.join(' ').split(' '));
+      for (const w of q.words) if (p.words.has(w) && !GENERIC.has(w) && !brandWords.has(w)) line++;
+    }
     if (upc) { level = 'likely'; why = `UPC ${upc} is listed in the notice`; score = 100; }
     else if (model && (brand || !q.brand)) { level = 'likely'; why = `Model ${model} is listed in the notice`; score = 90 + (brand ? 5 : 0); }
+    else if (line >= 1 && (kind || overlap >= 3)) { level = 'likely'; why = 'The notice covers all models of this product line'; score = 85 + line; }
     else if (brand && (kind || overlap >= 2)) {
       level = 'possible';
-      why = p.models.size ? 'Same brand and product, but your model number is not one of those listed' : 'Same brand and product; the notice does not list model numbers, so check its description';
+      why = !p.models.size ? 'Same brand and product; the notice does not list model numbers, so check its description' : q.models.length ? 'Same brand and product, but your model number is not one of those listed' : 'Same brand and product; compare your model number with the ones listed';
       score = 40 + overlap * 3 + (kind ? 10 : 0) + (p.models.size ? 0 : 5);
       if (q.models.length && p.models.size) score -= 15; // you gave a model and it isn't listed
     }
