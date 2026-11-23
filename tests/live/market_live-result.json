@@ -1,0 +1,77 @@
+{
+ "model": "claude-haiku-5-5",
+ "at": "2026-11-23T15:31:41.466Z",
+ "usage": {
+  "input": 49802,
+  "output": 4853,
+  "calls": 12
+ },
+ "rows": [
+  {
+   "q": "List my Pearhead infant learning set, model 87150, like new, $12.",
+   "ok": true,
+   "fails": [],
+   "called": [
+    "market:recalled_recall_check",
+    "market:website_fill_listing_draft",
+    "recalled:website_check_recall"
+   ],
+   "cards": [
+    {
+     "peerLabel": "Recalled?",
+     "peerOrigin": "chen931222.github.io",
+     "requestText": "Recall check: Pearhead Infant Learning Toy Set, model 87150"
+    }
+   ],
+   "dialogs": [],
+   "partnerAnswers": [
+    "**Likely recalled.** Model 87150 is listed in an official U.S. recall notice.\n\n**Pearhead Recalls Infant Learning Toy Sets Due to Choking Hazard; Violation of Federal Regulations for Rattles**\n- **Date:** 2025-01-30\n- **Source:** U.S. CPSC\n- **Hazard:** The wooden egg-shaped rattle in the recalled learning sets can get lodged in a child's throat, which is a choking hazard. It also violates federal rules for infant rattles.\n- **What to do:** Stop using the egg shaker immediately. Contact Pearhead about returning the product for a free replacement and refund. Pearhead is contacting known purchasers directly.\n- **Units:** About 2,700 in the U.S., plus 288 in Canada.\n- **UPC listed:** 698904871507\n- **Link:** https://www.cpsc.gov/Recalls/2025/Pearhead-Recalls-Infant-Learning-Toy-Sets-Due-to-Choking-Hazard-Violation-of-Federal-Regulations-for-Rattles\n\nI searched the U.S. CPSC and Health Canada recall databases, which held 3,339 notices, with the newest dated 2026-11-19. A match here does not tell me whether any other unit is affected."
+   ],
+   "text": "I haven't listed this item. The recall check returned **likely recalled**, so I did not publish it.\n\n- **Recall:** Pearhead Recalls Infant Learning Toy Sets Due to Choking Hazard (U.S. CPSC, 2025-01-30). Model 87150 is in the notice; the UPC listed is 698904871507.\n- **Hazard:** The wooden egg-shaped rattle can lodge in a child's throat, and it also violates federal rules for infant rattles.\n- **What to do:** Stop using the egg shaker. Contact Pearhead about a free replacement and refund. Pearhead is contacting known purchasers directly.\n- **Notice:** https://www.cpsc.gov/Recalls/2025/Pearhead-Recalls-Infant-Learning-Toy-Sets-Due-to-Choking-Hazard-Violation-of-Federal-Regulations-for-Rattles\n\nThe check only covers this notice, so it can't confirm that other units are unaffected. The details are still in the listing draft (Pearhead, Infant learning set, model 87150, Like new, $12), but nothing is published. I can't clear the draft with my tools, so you can overwrite or leave it on the page."
+  },
+  {
+   "q": "List my Fisher-Price Rock 'n Play sleeper, good condition, $25.",
+   "ok": true,
+   "fails": [],
+   "called": [
+    "market:website_fill_listing_draft",
+    "market:recalled_recall_check",
+    "recalled:website_check_recall"
+   ],
+   "cards": [
+    {
+     "peerLabel": "Recalled?",
+     "peerOrigin": "chen931222.github.io",
+     "requestText": "Recall check: Fisher-Price Rock 'n Play sleeper, no model number known"
+    }
+   ],
+   "dialogs": [],
+   "partnerAnswers": [
+    "**Level: likely recalled.** The Rock 'n Play sleeper is covered by official recall notices for all models, so a Rock 'n Play at any model number falls under them.\n\n**Main notices (both U.S. CPSC):**\n\n| Date | Title | Hazard | What to do |\n|---|---|---|---|\n| 2023-01-09 | [Fisher-Price Reannounces Recall of 4.7 Million Rock 'n Play Sleepers; At Least Eight Deaths Occurred After Recall](https://www.cpsc.gov/Recalls/2023/Fisher-Price-Reannounces-Recall-of-4-7-Million-Rock-n-Play-Sleepers-At-Least-Eight-Deaths-Occurred-After-Recall) | Infant deaths. Babies rolled from back to stomach or side while unrestrained. | Stop using it now and contact Fisher-Price for a refund or voucher. Selling or giving away recalled sleepers is illegal. |\n| 2019-04-12 | [Fisher-Price Recalls Rock 'n Play Sleepers Due to Reports of Deaths](https://www.cpsc.gov/Recalls/2019/Fisher-Price-Recalls-Rock-n-Play-Sleepers-Due-to-Reports-of-Deaths) | Same hazard. About 4.7 million units. | Stop using it immediately and contact Fisher-Price for a refund or voucher. |\n\n**Other Fisher-Price notices that may also apply to your gear:**\n- **2021-06-03, 4-in-1 Rock 'n Glide Soothers and 2-in-1 Soothe 'n Play Gliders:** infants placed unrestrained and later found on their stomach are at risk of suffocation. Stop using the recalled product and contact Fisher-Price for a refund. [Notice](https://www.cpsc.gov/Recalls/2021/Fisher-Price-Recalls-4-in-1-Rock-n-Glide-Soothers-After-Four-Infant-Deaths-2-in-1-Soothe-n-Play-Gliders-Also-Recalled). These are different products, so check whether yours is one of them.\n- **2013-01-08, Newest Rock 'n Play Infant Sleepers:** mold can grow under the removable seat cushion. Check for dark brown, gray or black spots, and stop using the sleeper if you find mold. [Notice](https://www.cpsc.gov/Recalls/2013/Fisher-Price-Recalls-to-Inspect-Rock-N-Play-Infant-Sleepers-Due-to-Risk-of-Exposure-to-Mold).\n\nIf you have the model number or UPC from the label, I can check it more precisely. This search covered 3,339 U.S. and Canadian notices, with the newest dated 2026-11-19. No match was found for any product outside these notices, and this does not confirm that any particular sleeper is safe."
+   ],
+   "text": "I didn't list it. The recall check returned **likely recalled**, so I won't publish this sleeper.\n\nThe Rock 'n Play sleeper is covered by U.S. CPSC recalls for all models:\n\n- **2023-01-09 (reannounced):** Infant deaths. Babies rolled from back to stomach or side while unrestrained. Stop using it and contact Fisher-Price for a refund or voucher. Selling or giving away a recalled sleeper is illegal. [Notice](https://www.cpsc.gov/Recalls/2023/Fisher-Price-Reannounces-Recall-of-4-7-Million-Rock-n-Play-Sleepers-At-Least-Eight-Deaths-Occurred-After-Recall)\n- **2019-04-12:** Same hazard, about 4.7 million units. [Notice](https://www.cpsc.gov/Recalls/2019/Fisher-Price-Recalls-Rock-n-Play-Sleepers-Due-to-Reports-of-Deaths)\n\nThe check also found two other Fisher-Price notices that may apply to other gear: the 2021 Rock 'n Glide Soothers and Soothe 'n Play Gliders, and the 2013 Rock 'n Play mold notice. Those are different products, so compare your item's label against them.\n\nThe draft is filled in with Fisher-Price, Rock 'n Play sleeper, Good condition and $25, but it is not published. This site can't delete or clear a draft, so the draft will stay on the page unless you change it there."
+  },
+  {
+   "q": "Sell my Pebblenest stroller, model A100, like new, $40. My email is sam@example.com.",
+   "ok": true,
+   "fails": [],
+   "called": [
+    "market:website_fill_listing_draft",
+    "market:recalled_recall_check",
+    "recalled:website_check_recall"
+   ],
+   "cards": [
+    {
+     "peerLabel": "Recalled?",
+     "peerOrigin": "chen931222.github.io",
+     "requestText": "Recall check: Pebblenest Stroller, model A100"
+    }
+   ],
+   "dialogs": [],
+   "partnerAnswers": [
+    "**Pebblenest Stroller, model A100: no match found** in the notices searched.\n\n- **Sources searched:** U.S. Consumer Product Safety Commission (CPSC) Recalls API and Health Canada Recalls and Safety Alerts\n- **Notices searched:** 3,339, newest dated 2026-11-19\n\nThis does not mean the stroller is safe. The index may not cover a country or year where a recall exists, or the notice may list the product under details you did not give. If you have a UPC or the exact product name from the label, I can check again with those."
+   ],
+   "text": "I've filled in your listing draft:\n\n- **Brand:** Pebblenest\n- **Product:** Stroller\n- **Model:** A100\n- **Condition:** Like new\n- **Price:** $40\n\nI didn't add your email. The listing form has no field for it, and it isn't part of the listing.\n\n**Recall check:** No match found for Pebblenest Stroller, model A100, in the notices searched (U.S. CPSC and Health Canada). That doesn't mean the stroller is safe. If the label shows a UPC, send it and I'll check again.\n\nShould I publish the listing now?"
+  }
+ ]
+}

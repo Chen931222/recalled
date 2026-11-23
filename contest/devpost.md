@@ -22,6 +22,7 @@ Recalls take new strollers, cribs and sleepers off store shelves. Used ones keep
 - `scripts/build_data.py` downloads both open datasets (CPSC Recalls API, U.S. government work; Health Canada Recalls and Safety Alerts, Open Government Licence – Canada) and keeps baby and kids gear. The CPSC API leaves its model field empty, so model numbers are read from each notice's text.
 - `site/js/match.js` is a pure function: no network, no model. The same code runs in the page, in the bridge frame other sites call, and in the tests.
 - The site was agentified with the official `agentify-website` skill and its runtime, unchanged. `build_network.mjs --check` passes with no warnings for both sites; `check_partner.mjs` confirms the market can call Recalled?.
+- Two live checks with a real model (Claude Haiku 5.5): Recalled? alone 8/8, and the full partner flow 3/3. The market's assistant asked Recalled? after the consent card, did not publish the two recalled items, and kept a seller's email out of the request. About US$0.06 in all; every answer is saved in the repository.
 - 39 Node tests with a scripted model, no key: the page and the assistant give the same answer; reads leave the page unchanged; refusals change nothing; the market's publish dialog shows the real listing; the market is offered Recalled? as a partner.
 
 ## Challenges we ran into
